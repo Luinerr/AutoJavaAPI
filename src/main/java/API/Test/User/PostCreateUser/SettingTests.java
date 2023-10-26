@@ -6,8 +6,8 @@ import org.junit.After;
 
 import static io.restassured.RestAssured.given;
 
-abstract class BeforeTest extends InitTest {
-    static UserData userData = new UserData(0, "useruseruser", "firstName", "lastName",
+abstract class SettingTests extends InitTest {
+    UserData userData = new UserData(0, "useruseruser", "firstName", "lastName",
             "email@email.ru", "password", "1234567890", 0);
 
 

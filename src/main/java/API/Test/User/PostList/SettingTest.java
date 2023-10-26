@@ -10,7 +10,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-abstract class BeforeTest extends InitTest {
+abstract class SettingTest extends InitTest {
 
     List<UserData> userDataList1 = new ArrayList<>(Arrays.asList(
             new UserData(0, "useruseruser1", "firstName", "lastName",
@@ -22,9 +22,6 @@ abstract class BeforeTest extends InitTest {
             new UserData(0, "useruseruser2", "firstName", "lastName",
                     "email@email.ru", "password", "1234567890", 0)
             ));
-
-
-
 
     List<UserData> userDataList = new ArrayList<>(Arrays.asList(
             new UserData(0, "useruseruser1", "firstName", "lastName",
@@ -62,11 +59,10 @@ abstract class BeforeTest extends InitTest {
                     "email@email.ru", "password", "1234567890", 0)
     ));
 
-
     //Delete created user
     @After
     public void afterConditional() {
-        userDataList.stream()
+        userDataList10.stream()
                 .forEach(userData ->
                         given()
                                 .when()
@@ -77,6 +73,15 @@ abstract class BeforeTest extends InitTest {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
+
         }
+    }
+
+    private void deleteUsers(List<UserData> users) {
+        users.stream()
+                .forEach(userData -> given()
+                        .when()
+                        .delete("/user/" + userData.getUsername())
+                );
     }
 }

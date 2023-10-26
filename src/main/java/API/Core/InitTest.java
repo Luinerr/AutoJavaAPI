@@ -1,6 +1,7 @@
 package API.Core;
 
 import API.Core.Specification.Specifications;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
 abstract public class InitTest {

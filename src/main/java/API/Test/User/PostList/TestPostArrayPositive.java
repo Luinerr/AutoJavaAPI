@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestPostArrayPositive extends BeforeTest {
+public class TestPostArrayPositive extends SettingTest {
 
     @Test
     public void add5Users_200() {

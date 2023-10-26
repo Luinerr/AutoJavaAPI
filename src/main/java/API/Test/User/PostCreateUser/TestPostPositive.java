@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestPostPositive extends BeforeTest {
+public class TestPostPositive extends SettingTests {
 
     @Test
     public void post_Response200() {

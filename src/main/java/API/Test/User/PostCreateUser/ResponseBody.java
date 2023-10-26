@@ -1,6 +1,6 @@
 package API.Test.User.PostCreateUser;
 
-public class ResponseBody {
+class ResponseBody {
     private int code;
     private String type;
     private String message;
