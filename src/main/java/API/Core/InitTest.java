@@ -9,6 +9,8 @@ abstract public class InitTest {
     @BeforeClass
     public static void SetUp() {
         Specifications.installSpecification(Specifications.requestSpec(url), Specifications.responseSpecOk200());
+
+
     }
 
 }
